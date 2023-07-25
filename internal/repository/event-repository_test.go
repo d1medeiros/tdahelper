@@ -1,9 +1,7 @@
 package repository
 
 import (
-	"fmt"
-	"github.com/jameycribbs/hare"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/suite"
 	"tdahelper/internal/model"
 	"tdahelper/internal/repository/testutil"
 	"testing"
@@ -13,17 +11,24 @@ import (
 var path = "./datatest"
 var baseDB = "./datatest/events.json"
 
-func initDB(db *hare.Database) {
-	_ = db.DropTable(table_event)
-	if !db.TableExists(table_event) {
-		err := db.CreateTable(table_event)
-		if err != nil {
-			panic(err)
-		}
-	}
+type EventRepositoryTest struct {
+	suite.Suite
+	dbs *model.DBStore
 }
 
-func Test_eventRepository_FindAll(t *testing.T) {
+func TestEventRepositoryTest(t *testing.T) {
+	suite.Run(t, new(EventRepositoryTest))
+}
+
+func (s *EventRepositoryTest) SetupTest() {
+	s.dbs = &model.DBStore{}
+}
+
+func (s *EventRepositoryTest) TearDownAllSuite() {
+	s.dbs.Close()
+}
+
+func (s *EventRepositoryTest) TestEventRepositoryFindAll() {
 	tests := []struct {
 		name     string
 		initFile string
@@ -80,24 +85,27 @@ func Test_eventRepository_FindAll(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		s.Run(tt.name, func() {
+			testutil.InitDatabaseTest(path, tt.initFile, baseDB)
+			s.dbs.New(path)
 			e := &eventRepository{
-				db: testutil.InitDatabaseTest(path, tt.initFile, baseDB),
+				db: s.dbs.GetDB(),
 			}
-
 			got, err := e.FindAll()
 			if (err != nil) != tt.wantErr {
-				t.Errorf("FindAll() error = %v, wantErr %v", err, tt.wantErr)
+				s.Errorf(err, "FindAll() wantErr %v", tt.wantErr)
 				return
 			}
-			assert.Equal(t, tt.want, got)
-
-			e.db.Close()
+			model.SortEvents(got)
+			s.EqualValues(
+				tt.want,
+				got,
+			)
 		})
 	}
 }
 
-func Test_eventRepository_Insert(t *testing.T) {
+func (s *EventRepositoryTest) TestEventRepository_Insert() {
 	type args struct {
 		r model.Event
 	}
@@ -124,23 +132,25 @@ func Test_eventRepository_Insert(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		s.Run(tt.name, func() {
+			testutil.InitDatabaseTest(path, tt.initFile, baseDB)
+			s.dbs.New(path)
 			e := &eventRepository{
-				db: testutil.InitDatabaseTest(path, tt.initFile, baseDB),
+				db: s.dbs.GetDB(),
 			}
 			got, err := e.Insert(tt.args.r)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("Insert() error = %v, wantErr %v", err, tt.wantErr)
+				s.Errorf(err, "Insert() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			if got != tt.want {
-				t.Errorf("Insert() got = %v, want %v", got, tt.want)
+				s.Errorf(err, "Insert() got = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func Test_eventRepository_Update(t *testing.T) {
+func (s *EventRepositoryTest) TestEventRepositoryUpdate() {
 	type args struct {
 		ev model.Event
 	}
@@ -148,7 +158,7 @@ func Test_eventRepository_Update(t *testing.T) {
 		name     string
 		initFile string
 		args     args
-		wantErr  assert.ErrorAssertionFunc
+		wantErr  bool
 	}{
 		{
 			name:     "Update, with success",
@@ -162,23 +172,26 @@ func Test_eventRepository_Update(t *testing.T) {
 					Category: "z",
 				},
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
-				return false
-			},
+			wantErr: false,
 		},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		s.Run(tt.name, func() {
+			testutil.InitDatabaseTest(path, tt.initFile, baseDB)
+			s.dbs.New(path)
 			e := &eventRepository{
-				db: testutil.InitDatabaseTest(path, tt.initFile, baseDB),
+				db: s.dbs.GetDB(),
 			}
-			tt.wantErr(t, e.Update(tt.args.ev), fmt.Sprintf("Update(%v)", tt.args.ev))
-			_ = e.db.Close()
+			err := e.Update(tt.args.ev)
+			if (err != nil) != tt.wantErr {
+				s.Errorf(err, "Update() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
 		})
 	}
 }
 
-func Test_eventRepository_findBy(t *testing.T) {
+func (s *EventRepositoryTest) TestEventRepository_findBy() {
 	type args struct {
 		queryFn func(ev model.Event) bool
 	}
@@ -187,7 +200,7 @@ func Test_eventRepository_findBy(t *testing.T) {
 		args     args
 		initFile string
 		want     []model.Event
-		wantErr  assert.ErrorAssertionFunc
+		wantErr  bool
 	}{
 		{
 			name: "findBy [desc] with success",
@@ -220,9 +233,7 @@ func Test_eventRepository_findBy(t *testing.T) {
 					Category: "a",
 				},
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
-				return false
-			},
+			wantErr: false,
 		},
 		{
 			name: "findBy [category] with success",
@@ -241,9 +252,7 @@ func Test_eventRepository_findBy(t *testing.T) {
 					Category: "b",
 				},
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
-				return false
-			},
+			wantErr: false,
 		},
 		{
 			name: "findBy [range date] with success",
@@ -257,7 +266,7 @@ func Test_eventRepository_findBy(t *testing.T) {
 						0,
 						0,
 						0,
-						time.Now().Location(),
+						time.UTC,
 					)) &&
 						ev.Date.Before(time.Date(
 							2023,
@@ -267,7 +276,7 @@ func Test_eventRepository_findBy(t *testing.T) {
 							0,
 							0,
 							0,
-							time.Now().Location(),
+							time.UTC,
 						))
 				},
 			},
@@ -285,7 +294,7 @@ func Test_eventRepository_findBy(t *testing.T) {
 						0,
 						0,
 						0,
-						time.Now().Location(),
+						time.UTC,
 					),
 					Category: "a",
 				},
@@ -301,27 +310,28 @@ func Test_eventRepository_findBy(t *testing.T) {
 						0,
 						0,
 						0,
-						time.Now().Location(),
+						time.UTC,
 					),
 					Category: "a",
 				},
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
-				return false
-			},
+			wantErr: false,
 		},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		s.Run(tt.name, func() {
+			testutil.InitDatabaseTest(path, tt.initFile, baseDB)
+			s.dbs.New(path)
 			e := &eventRepository{
-				db: testutil.InitDatabaseTest(path, tt.initFile, baseDB),
+				db: s.dbs.GetDB(),
 			}
 			got, err := e.findBy(tt.args.queryFn)
-			if !tt.wantErr(t, err, fmt.Sprintf("findBy()")) {
+			if (err != nil) != tt.wantErr {
+				s.Errorf(err, "findBy() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			assert.Equalf(t, tt.want, got, "findBy()")
-			_ = e.db.Close()
+			model.SortEvents(got)
+			s.EqualValues(tt.want, got)
 		})
 	}
 }

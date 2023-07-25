@@ -2,9 +2,20 @@ package model
 
 import (
 	"github.com/jameycribbs/hare"
+	"sort"
 	"strconv"
 	"time"
 )
+
+func SortEvents(events []Event) {
+	sort.Sort(EventById(events))
+}
+
+type EventById []Event
+
+func (a EventById) Len() int           { return len(a) }
+func (a EventById) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a EventById) Less(i, j int) bool { return a[i].Id < a[j].Id }
 
 type Event struct {
 	Id       int       `json:"id"`
