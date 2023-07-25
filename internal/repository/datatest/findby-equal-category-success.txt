@@ -1,0 +1,5 @@
+{"id":1,"desc":"teste 1","value":"2.0","date":"0001-01-01T00:00:00Z","category":"a"}
+{"id":2,"desc":"teste 2","value":"3.0","date":"0001-01-01T00:00:00Z","category":"a"}
+{"id":3,"desc":"teste 1","value":"3.0","date":"0001-01-01T00:00:00Z","category":"a"}
+{"id":4,"desc":"teste 4","value":"3.0","date":"0001-01-01T00:00:00Z","category":"b"}
+{"id":5,"desc":"teste 1","value":"3.0","date":"0001-01-01T00:00:00Z","category":"a"}
