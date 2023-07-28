@@ -1,4 +1,4 @@
-package model
+package config
 
 import (
 	"fmt"
@@ -25,14 +25,14 @@ func (dbs *DBStore) New(path string) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Disk test started")
+	fmt.Println("Disk started")
 	dbs.ds = ds
 
-	fmt.Println("Ram test starting")
+	fmt.Println("Ram starting")
 	db, err := hare.New(ds)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Ram test started")
+	fmt.Println("Ram started")
 	dbs.db = db
 }

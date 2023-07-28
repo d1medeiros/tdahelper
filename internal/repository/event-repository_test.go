@@ -105,7 +105,7 @@ func (s *EventRepositoryTest) TestEventRepositoryFindAll() {
 	}
 }
 
-func (s *EventRepositoryTest) TestEventRepository_Insert() {
+func (s *EventRepositoryTest) TestEventRepositoryInsert() {
 	type args struct {
 		r model.Event
 	}
@@ -203,7 +203,7 @@ func (s *EventRepositoryTest) TestEventRepository_findBy() {
 		wantErr  bool
 	}{
 		{
-			name: "findBy [desc] with success",
+			name: "FindBy [desc] with success",
 			args: args{
 				queryFn: func(ev model.Event) bool {
 					return ev.Desc == "teste 1"
@@ -236,7 +236,7 @@ func (s *EventRepositoryTest) TestEventRepository_findBy() {
 			wantErr: false,
 		},
 		{
-			name: "findBy [category] with success",
+			name: "FindBy [category] with success",
 			args: args{
 				queryFn: func(ev model.Event) bool {
 					return ev.Category == "b"
@@ -255,7 +255,7 @@ func (s *EventRepositoryTest) TestEventRepository_findBy() {
 			wantErr: false,
 		},
 		{
-			name: "findBy [range date] with success",
+			name: "FindBy [range date] with success",
 			args: args{
 				queryFn: func(ev model.Event) bool {
 					return ev.Date.After(time.Date(
@@ -325,9 +325,9 @@ func (s *EventRepositoryTest) TestEventRepository_findBy() {
 			e := &eventRepository{
 				db: s.dbs.GetDB(),
 			}
-			got, err := e.findBy(tt.args.queryFn)
+			got, err := e.FindBy(tt.args.queryFn)
 			if (err != nil) != tt.wantErr {
-				s.Errorf(err, "findBy() error = %v, wantErr %v", err, tt.wantErr)
+				s.Errorf(err, "FindBy() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			model.SortEvents(got)

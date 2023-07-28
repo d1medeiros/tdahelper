@@ -1,0 +1,9 @@
+{"id":1,"desc":"Ifood","value":"10.45","date":"2023-01-19T16:14:48.931882-03:00","category":"Restaurante"}
+{"id":2,"desc":"mercado","value":"100.05","date":"2023-01-19T16:14:51.702291-03:00","category":"alimentacao"}
+{"id":3,"desc":"Ifood","value":"10.05","date":"2023-02-09T16:14:56.230008-03:00","category":"Restaurante"}
+{"id":4,"desc":"mercado","value":"560.05","date":"2023-02-19T16:14:58.877939-03:00","category":"alimentacao"}
+{"id":5,"desc":"Ifood","value":"10.05","date":"2023-02-07T16:15:01.276944-03:00","category":"Restaurante"}
+{"id":6,"desc":"Ifood","value":"40.05","date":"2023-03-13T16:15:04.12633-03:00","category":"Restaurante"}
+{"id":7,"desc":"Ifood","value":"15.05","date":"2023-03-04T16:15:24.816713-03:00","category":"Restaurante"}
+{"id":8,"desc":"Ifood","value":"16.05","date":"2023-03-11T16:15:30.584234-03:00","category":"Restaurante"}
+{"id":9,"desc":"Ifood","value":"30.05","date":"2023-04-19T16:15:33.530936-03:00","category":"Restaurante"}

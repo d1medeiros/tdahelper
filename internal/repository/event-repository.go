@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"errors"
 	"github.com/jameycribbs/hare"
 	"tdahelper/internal/model"
 )
@@ -12,6 +13,7 @@ type EventRepository interface {
 	Update(ev model.Event) error
 	FindAll() ([]model.Event, error)
 	FindByDesc(desc string) ([]model.Event, error)
+	FindBy(queryFn func(ev model.Event) bool) ([]model.Event, error)
 }
 
 type eventRepository struct {
@@ -30,7 +32,7 @@ func NewEventRepository(db *hare.Database) EventRepository {
 	}
 }
 
-func (e *eventRepository) findBy(queryFn func(ev model.Event) bool) ([]model.Event, error) {
+func (e *eventRepository) FindBy(queryFn func(ev model.Event) bool) ([]model.Event, error) {
 	var results []model.Event
 	var err error
 	ids, err := e.db.IDs(table_event)
@@ -50,6 +52,15 @@ func (e *eventRepository) findBy(queryFn func(ev model.Event) bool) ([]model.Eve
 }
 
 func (e *eventRepository) Insert(ev model.Event) (int, error) {
+	if ev.Desc == "" {
+		return 0, errors.New("error - desc is empty")
+	}
+	if ev.Value == "" || ev.Value == "0" {
+		return 0, errors.New("error - value is empty")
+	}
+	if ev.Category == "" {
+		return 0, errors.New("error - category is empty")
+	}
 	return e.db.Insert(table_event, &ev)
 }
 
@@ -75,7 +86,7 @@ func (e *eventRepository) FindAll() ([]model.Event, error) {
 }
 
 func (e *eventRepository) FindByDesc(desc string) ([]model.Event, error) {
-	all, err := e.findBy(
+	all, err := e.FindBy(
 		func(ev model.Event) bool {
 			return ev.Desc == desc
 		},
