@@ -1,8 +1,6 @@
 package main
 
-import (
-	"tdahelper/cmd"
-)
+import "tdahelper/cmd"
 
 func main() {
 

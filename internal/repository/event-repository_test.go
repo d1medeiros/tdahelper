@@ -96,7 +96,7 @@ func (s *EventRepositoryTest) TestEventRepositoryFindAll() {
 				s.Errorf(err, "FindAll() wantErr %v", tt.wantErr)
 				return
 			}
-			model.SortEvents(got)
+			model.SortEventsById(got)
 			s.EqualValues(
 				tt.want,
 				got,
@@ -330,7 +330,7 @@ func (s *EventRepositoryTest) TestEventRepository_findBy() {
 				s.Errorf(err, "FindBy() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			model.SortEvents(got)
+			model.SortEventsById(got)
 			s.EqualValues(tt.want, got)
 		})
 	}

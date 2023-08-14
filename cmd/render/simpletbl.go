@@ -11,3 +11,7 @@ func RenderTable(td [][]string) error {
 		WithData(td).
 		Render()
 }
+
+func RenderLine(txt string) {
+	pterm.DefaultBasicText.Println(txt)
+}

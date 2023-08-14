@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"github.com/jameycribbs/hare"
 	"github.com/jameycribbs/hare/datastores/disk"
 )
@@ -25,14 +24,14 @@ func (dbs *DBStore) New(path string) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Disk started")
+	//fmt.Println("Disk started")
 	dbs.ds = ds
 
-	fmt.Println("Ram starting")
+	//fmt.Println("Ram starting")
 	db, err := hare.New(ds)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Ram started")
+	//fmt.Println("Ram started")
 	dbs.db = db
 }

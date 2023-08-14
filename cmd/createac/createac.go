@@ -10,5 +10,6 @@ func init() {
 }
 
 var CreateCmd = &cobra.Command{
-	Use: "create",
+	Use:       "create",
+	ValidArgs: []string{"event"},
 }

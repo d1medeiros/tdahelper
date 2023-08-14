@@ -7,6 +7,7 @@ import (
 
 func init() {
 	ListEventsCmd.AddCommand(listasubac.EventsCmd)
+	ListEventsCmd.AddCommand(listasubac.CategoryCmd)
 }
 
 var ListEventsCmd = &cobra.Command{

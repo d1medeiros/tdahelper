@@ -8,6 +8,7 @@ import (
 func init() {
 	OpCmd.AddCommand(subop.OpCPCmd)
 	OpCmd.AddCommand(subop.OpCleanCmd)
+	OpCmd.AddCommand(subop.OpBKPCmd)
 }
 
 var OpCmd = &cobra.Command{

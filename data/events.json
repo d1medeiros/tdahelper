@@ -1,29 +1,53 @@
-{"id":1,"desc":"vamo","value":"415.51","date":"2023-08-15T00:00:00Z","category":"restaurante"}
-{"id":2,"desc":"gasolina","value":"143.32","date":"2023-08-15T00:00:00Z","category":"automovel"}
-{"id":3,"desc":"aculputura bb","value":"110","date":"2023-08-13T00:00:00Z","category":"bb"}
-{"id":4,"desc":"farmacia","value":"43","date":"2023-08-12T00:00:00Z","category":"farmacia"}
-{"id":5,"desc":"farmacia","value":"98","date":"2023-08-10T00:00:00Z","category":"farmacia"}
-{"id":6,"desc":"yuki","value":"238","date":"2023-08-09T00:00:00Z","category":"restaurante"}
-{"id":7,"desc":"brasa alta","value":"119","date":"2023-08-08T00:00:00Z","category":"restaurante"}
-{"id":8,"desc":"firt class","value":"139","date":"2023-08-08T00:00:00Z","category":"cuidado com lar"}
-{"id":9,"desc":"exame bb","value":"212","date":"2023-08-08T00:00:00Z","category":"bb"}
-{"id":10,"desc":"petshop","value":"287","date":"2023-08-07T00:00:00Z","category":"pets"}
-{"id":11,"desc":"farmacia","value":"234","date":"2023-08-07T00:00:00Z","category":"farmacia"}
-{"id":12,"desc":"gasolina","value":"124","date":"2023-08-04T00:00:00Z","category":"automovel"}
-{"id":13,"desc":"cabana burguer","value":"195","date":"2023-08-03T00:00:00Z","category":"restaurante"}
-{"id":14,"desc":"mane","value":"130","date":"2023-08-07T00:00:00Z","category":"restaurante"}
-{"id":15,"desc":"gasolina","value":"101","date":"2023-08-04T00:00:00Z","category":"automovel"}
-{"id":16,"desc":"guacamole","value":"239","date":"2023-08-04T00:00:00Z","category":"restaurante"}
-{"id":17,"desc":"pacheco","value":"311","date":"2023-08-07T00:00:00Z","category":"farmacia"}
-{"id":18,"desc":"raia","value":"121","date":"2023-08-07T00:00:00Z","category":"farmacia"}
-{"id":19,"desc":"patins","value":"299","date":"2023-08-07T00:00:00Z","category":"entretenimento"}
-{"id":20,"desc":"ifood","value":"92.90","date":"2023-08-07T00:00:00Z","category":"restaurante"}
-{"id":21,"desc":"ifood","value":"112","date":"2023-08-07T00:00:00Z","category":"restaurante"}
-{"id":22,"desc":"farmacia","value":"137","date":"2023-08-07T00:00:00Z","category":"farmacia"}
-{"id":23,"desc":"jetbrains","value":"89","date":"2023-08-07T00:00:00Z","category":"outros"}
-{"id":24,"desc":"microsoft game pass","value":"45","date":"2023-08-07T00:00:00Z","category":"outros"}
-{"id":25,"desc":"kindle","value":"20","date":"2023-08-07T00:00:00Z","category":"outros"}
-{"id":26,"desc":"spotify","value":"35","date":"2023-08-07T00:00:00Z","category":"outros"}
-{"id":27,"desc":"appletv","value":"20","date":"2023-08-07T00:00:00Z","category":"outros"}
-{"id":28,"desc":"amazon prime","value":"15","date":"2023-08-07T00:00:00Z","category":"outros"}
-{"id":29,"desc":"monitor","value":"224","date":"2023-08-13T00:00:00Z","category":"bb"}
+{"id":1,"desc":"vamo","value":"415.51","date":"2023-08-05T00:00:00Z","category":"restaurante", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":2,"desc":"gasolina","value":"143.32","date":"2023-08-05T00:00:00Z","category":"automovel", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":3,"desc":"aculputura bb","value":"110","date":"2023-08-03T00:00:00Z","category":"bb", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":4,"desc":"farmacia","value":"43","date":"2023-08-02T00:00:00Z","category":"farmacia", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":5,"desc":"farmacia","value":"98","date":"2023-08-08T00:00:00Z","category":"farmacia", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":6,"desc":"yuki","value":"238","date":"2023-08-09T00:00:00Z","category":"restaurante", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":7,"desc":"brasa alta","value":"119","date":"2023-08-08T00:00:00Z","category":"restaurante", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":8,"desc":"firt class","value":"139","date":"2023-08-08T00:00:00Z","category":"cuidado_com_lar", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":9,"desc":"exame bb","value":"212","date":"2023-08-08T00:00:00Z","category":"bb", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":10,"desc":"petshop","value":"287","date":"2023-08-07T00:00:00Z","category":"pets", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":11,"desc":"farmacia","value":"234","date":"2023-08-07T00:00:00Z","category":"farmacia", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":12,"desc":"gasolina","value":"124","date":"2023-08-04T00:00:00Z","category":"automovel", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":13,"desc":"cabana burguer","value":"195","date":"2023-08-03T00:00:00Z","category":"restaurante", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":14,"desc":"mane","value":"130","date":"2023-08-07T00:00:00Z","category":"restaurante", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":15,"desc":"gasolina","value":"101","date":"2023-08-04T00:00:00Z","category":"automovel", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":16,"desc":"guacamole","value":"239","date":"2023-08-04T00:00:00Z","category":"restaurante", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":17,"desc":"pacheco","value":"311","date":"2023-08-07T00:00:00Z","category":"farmacia", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":18,"desc":"raia","value":"121","date":"2023-08-07T00:00:00Z","category":"farmacia", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":19,"desc":"patins","value":"299","date":"2023-08-07T00:00:00Z","category":"entretenimento", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":20,"desc":"ifood","value":"92.90","date":"2023-08-07T00:00:00Z","category":"restaurante", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":21,"desc":"ifood","value":"112","date":"2023-08-07T00:00:00Z","category":"restaurante", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":22,"desc":"farmacia","value":"137","date":"2023-08-07T00:00:00Z","category":"farmacia", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":23,"desc":"jetbrains","value":"89","date":"2023-08-07T00:00:00Z","category":"outros", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":24,"desc":"microsoft game pass","value":"45","date":"2023-08-07T00:00:00Z","category":"outros", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":25,"desc":"kindle","value":"20","date":"2023-08-07T00:00:00Z","category":"outros", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":26,"desc":"spotify","value":"35","date":"2023-08-07T00:00:00Z","category":"outros", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":27,"desc":"appletv","value":"20","date":"2023-08-07T00:00:00Z","category":"outros", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":28,"desc":"amazon prime","value":"15","date":"2023-08-07T00:00:00Z","category":"outros", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":29,"desc":"monitor","value":"224","date":"2023-08-03T00:00:00Z","category":"bb", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":30,"desc":"zona sul","value":"69","date":"2023-08-06T00:00:00Z","category":"restaurante", "type": "unkown","father": 0, "installment":  0, "ins_qtd": 0}
+{"id":31,"desc":"club men sa","value":"50","date":"2023-08-05T00:00:00Z","category":"cuidado pessoal", "type":"unkown", "father":0, "installment":  0, "ins_qtd": 0}
+{"id":32,"desc":"adore","value":"97.35","date":"2023-08-04T00:00:00Z","category":"restaurante", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":33,"desc":"ceg","value":"257","date":"2023-08-01T00:00:00Z","category":"cuidado_com_lar", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":34,"desc":"light","value":"237","date":"2023-08-01T00:00:00Z","category":"cuidado_com_lar", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":35,"desc":"adore","value":"83","date":"2023-08-01T00:00:00Z","category":"restaurante", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":36,"desc":"zona sul","value":"73","date":"2023-07-27T00:00:00Z","category":"restaurante", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":37,"desc":"zona sul","value":"72","date":"2023-07-23T00:00:00Z","category":"restaurante", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":38,"desc":"drogasmil","value":"279","date":"2023-09-05T00:00:00Z","category":"farmacia", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":39,"desc":"planeta sushi","value":"297","date":"2023-09-05T00:00:00Z","category":"restaurante", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":40,"desc":"pet love","value":"198","date":"2023-09-10T00:00:00Z","category":"pets", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":41,"desc":"cobasi","value":"52.15","date":"2023-09-10T00:00:00Z","category":"pets", "type": "unkown","father":0, "installment":  0, "ins_qtd": 0}
+{"id":42,"desc":"alura","value":"66.666667","date":"2023-09-11T00:00:00Z","category":"estudos","type":"credit","father":0,"installment":1,"ins_qtd":12}
+{"id":43,"desc":"alura","value":"66.666667","date":"2023-10-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":2,"ins_qtd":12}
+{"id":44,"desc":"alura","value":"66.666667","date":"2023-11-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":3,"ins_qtd":12}
+{"id":45,"desc":"alura","value":"66.666667","date":"2023-12-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":4,"ins_qtd":12}
+{"id":46,"desc":"alura","value":"66.666667","date":"2024-01-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":5,"ins_qtd":12}
+{"id":47,"desc":"alura","value":"66.666667","date":"2024-02-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":6,"ins_qtd":12}
+{"id":48,"desc":"alura","value":"66.666667","date":"2024-03-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":7,"ins_qtd":12}
+{"id":49,"desc":"alura","value":"66.666667","date":"2024-04-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":8,"ins_qtd":12}
+{"id":50,"desc":"alura","value":"66.666667","date":"2024-05-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":9,"ins_qtd":12}
+{"id":51,"desc":"alura","value":"66.666667","date":"2024-06-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":10,"ins_qtd":12}
+{"id":52,"desc":"alura","value":"66.666667","date":"2024-07-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":11,"ins_qtd":12}
+{"id":53,"desc":"alura","value":"66.666667","date":"2024-08-11T00:00:00Z","category":"estudos","type":"credit","father":1,"installment":12,"ins_qtd":12}

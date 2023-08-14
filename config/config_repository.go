@@ -4,7 +4,7 @@ import (
 	"tdahelper/internal/repository"
 )
 
-var Path = "./data"
+var Path = "/Users/diegobraga/Documents/projetos/tdahelper/data"
 
 var Mng Manager
 

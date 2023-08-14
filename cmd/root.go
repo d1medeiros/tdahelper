@@ -12,8 +12,7 @@ var (
 	// Used for flags.
 	cfgFile     string
 	userLicense string
-
-	rootCmd = &cobra.Command{
+	rootCmd     = &cobra.Command{
 		Use:   "tda",
 		Short: "A helper for adah",
 		Long:  `A helper for adah with log description.`,

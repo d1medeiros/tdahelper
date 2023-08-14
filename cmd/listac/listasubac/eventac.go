@@ -2,42 +2,41 @@ package listasubac
 
 import (
 	"github.com/spf13/cobra"
+	"tdahelper/cmd/listac/listasubac/eventquery"
 	"tdahelper/cmd/render"
 	"tdahelper/config"
+	"tdahelper/internal/model"
 )
 
-var all bool
 var desc = ""
 var category = ""
-var byMouth = ""
+var sort = ""
 
 var EventsCmd = &cobra.Command{
 	Use:   "event",
-	Short: "Print the events based on filter",
-	Run: func(cmd *cobra.Command, args []string) {
+	Short: "Print all the events based on filter",
+	RunE: func(cmd *cobra.Command, args []string) error {
 		var td [][]string
-		if all {
-			td = config.Mng.FindAll()
-		} else {
-			td = config.Mng.FindByMouth(2, 2023)
-		}
-		_ = render.RenderTable(td)
+		td = config.Mng.FindAll(sort)
+		return render.RenderTable(td)
 	},
 }
 
 func init() {
-	EventsCmd.Flags().BoolVarP(
-		&all,
-		"all",
-		"a",
-		false,
-		"description of an event",
+	EventsCmd.AddCommand(eventquery.RangeQrCmd)
+	EventsCmd.AddCommand(eventquery.ByMonthQrCmd)
+	EventsCmd.PersistentFlags().StringVarP(&category, "category", "c", "", "")
+	EventsCmd.PersistentFlags().StringVarP(&sort, "sort", "s", "", "")
+	EventsCmd.RegisterFlagCompletionFunc(
+		"sort",
+		func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+			return []string{model.EventsById, model.EventsByDate}, cobra.ShellCompDirectiveNoFileComp
+		},
 	)
-	EventsCmd.Flags().StringVarP(
-		&desc,
-		"desc",
-		"d",
-		"",
-		"description of an event",
+	EventsCmd.RegisterFlagCompletionFunc(
+		"category",
+		func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+			return config.Mng.FindAllCategory(), cobra.ShellCompDirectiveNoFileComp
+		},
 	)
 }

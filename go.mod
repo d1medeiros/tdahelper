@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/artonge/go-csv-tag/v2 v2.2.0
+	github.com/emirpasic/gods v1.18.1
 	github.com/jameycribbs/hare v0.6.0
 	github.com/pterm/pterm v0.12.63
 	github.com/spf13/cobra v1.7.0
